@@ -1,0 +1,30 @@
+# Default configuration for Bayesian Deep Learning
+model: "bayesian"  # Options: bayesian, mc_dropout, simple_cnn
+dataset: "mnist"    # Options: mnist, cifar10
+
+# Training parameters
+epochs: 20
+batch_size: 128
+learning_rate: 0.001
+num_workers: 4
+
+# Model parameters
+input_size: 784     # Will be auto-detected based on dataset
+hidden_size: 400
+output_size: 10
+prior_scale: 1.0    # For Bayesian models
+dropout_rate: 0.5   # For MC Dropout models
+
+# Uncertainty estimation
+num_mc_samples: 100
+confidence_levels: [0.95, 0.90, 0.80, 0.70]
+
+# System
+seed: 42
+device: "auto"      # auto, cpu, cuda, mps
+
+# Paths
+data_dir: "./data"
+checkpoint_dir: "./checkpoints"
+assets_dir: "./assets"
+logs_dir: "./logs"

@@ -1,0 +1,23 @@
+# Configuration for CIFAR-10 experiments
+model: "mc_dropout"
+dataset: "cifar10"
+
+# Training parameters
+epochs: 50
+batch_size: 64
+learning_rate: 0.001
+num_workers: 4
+
+# Model parameters
+input_size: 3072    # 32*32*3 for CIFAR-10
+hidden_size: 512
+output_size: 10
+dropout_rate: 0.3
+
+# Uncertainty estimation
+num_mc_samples: 100
+confidence_levels: [0.95, 0.90, 0.80, 0.70]
+
+# System
+seed: 42
+device: "auto"
